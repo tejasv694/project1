@@ -1,0 +1,125 @@
+<!Doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  background: #232323;
+}
+h1{
+  font-family: 'Diplomata SC', cursive;
+  text-align: center;
+ font-size: 55px;
+ color: #aaaaaa;
+ margin: 60px 0 0 0;
+}
+h2{
+  font-family: 'Lobster', cursive;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+  text-align: center;
+}
+div{
+  position: relative;
+  background-repeat:no-repeat;
+  height: 300px;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 25px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height:30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+   -moz-transition: height .5s;
+}
+small{
+  opacity: 0;
+}
+.show-description p{
+height:150px;
+}
+.show-description small{
+opacity:1;
+}
+@media (max-width:500px){
+  h1{
+    margin-top: 20px;
+    line-height: 40px;
+    font-size: 50px;
+  }
+  h2{
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div{
+      margin:20px 12px 0 12px;
+      }
+      p{
+        font-size: 20px;
+        line-height: 24px;
+        }
+        small{
+          font-size:16px;
+          }
+
+}
+.price{
+  float: right;
+}
+.first{
+  background: url("http://www.themenopausegang.com/wp-content/uploads/2015/09/Dollarphotoclub_57388671.jpg");
+  -webkit-background-size: cover;
+}
+.second{
+  background: url("https://cdn.spafinder.com/sites/4/2014/12/soothe-your-senses-aromatherapy-massage.jpg");
+  -webkit-background-size: cover;
+}
+.third{
+  background: url("http://img.aws.livestrongcdn.com/ls-1200x630/cme/cme_public_images/www_livestrong_com/photos.demandstudios.com/getty/article/94/6/530981151_XS.jpg");
+  -webkit-background-size: cover;
+}
+</style>
+</head>
+<body>
+  <h1>The Four Fountains Spa</h1>
+  <h2>Your one short stress buster!!</h2>
+  <div class="first">
+  <p>Hot Stone Massage <span class="price">$50</span> <br /> <small>Heated, smooth stones are placed on certain points on the body to warm and loosen tight muscles and balance energy centers in the body.
+The massage therapist may also hold stones and apply gentle pressure with them. The warmth is comforting. Hot stone massage is good for people who have muscle tension but prefer lighter massage.
+</small></p>
+</div>
+
+<div class="second">
+  <p>Aromatherapy Massage <span class="price">$60</span><br /><small>Aromatherapy massage is massage therapy with adding one or more scented plant oils called essential oils to address specific needs.
+The massage therapist can select oils that are relaxing, energizing, stress-reducing, balancing, etc. One of the most common essential oils used in aromatherapy massage is lavender.
+Aromatherapy massage is particularly suited to stress-related conditions or conditions with an emotional component. Learn more about aromatherapy massage.
+</small></p>
+</div>
+
+<div class="third">
+  <p>Deep Tissue Massage <span class="price">$45</span><br /><small>Deep tissue massage targets the deeper layers of muscle and connective tissue. The massage therapist uses slower strokes or friction techniques across the grain of the muscle.
+Deep tissue massage is used for chronically tight or painful muscles, repetitive strain, postural problems, or recovery from injury.
+People often feel sore for one to two days after deep tissue massage.</small></p>
+<script>
+$("div").on("click", function(){
+  $(this).toggleClass('show-description');
+  });
+</script>
+</body>
+</html>
