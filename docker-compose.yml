@@ -1,0 +1,37 @@
+version: '3'
+services:
+  wordpress:
+    image: wordpress:4.9.8
+    container_name: wordpress
+    restart: always
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: sebastien@789
+    ports:
+      - 8085:80
+
+  db:
+    image: mysql:8
+    container_name: mysqlwp
+    restart: always
+    command: "--default-authentication-plugin=mysql_native_password"
+    environment:
+      MYSQL_ROOT_PASSWORD: sebastien@789
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: sebastien@789
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    volumes:
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    restart: always
+    ports:
+      - 8084:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORT: password
+
